@@ -10,7 +10,7 @@
                 should have the files that the students originally
                 submitted with the names the students gave them.
 
-Last modified:  February 12, 2015
+Last modified:  October 30, 2016
 """
 
 import sys, os
@@ -19,7 +19,7 @@ assignment = sys.argv[1] # assignment name passed as command line arg
 for root, dirs, files in os.walk(os.getcwd()): # contents of current dir
   for f in files:
     if assignment in f:
-      if ".txt" in f or ".out" in f: # delete extraneous files
+      if ".out" in f: # delete extraneous files
         os.remove(f)
       else:
         currFile = f # save full file name
